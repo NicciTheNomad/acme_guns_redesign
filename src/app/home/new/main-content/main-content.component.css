@@ -1,0 +1,18 @@
+.content {
+  margin: 0 10px;
+  width: 73%;
+  float: left;
+}
+.sidebar {
+  margin: 0 10px;
+  width: 24%;
+  float: right;
+  border: 1px solid #28303e;
+}
+.sidebar-left {
+  float: left;
+  width: 20%;
+}
+.content-right {
+  float: right;
+}

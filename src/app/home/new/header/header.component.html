@@ -1,0 +1,54 @@
+<div class="navbar">
+  <a class="logo" routerLink="/">
+    <img src="assets/images/logo.png" alt="Acme Guns Logo">
+  </a>
+
+  <div class="navbar-links">
+    <a routerLink="/new">Home</a>
+
+    <div class="submenu">
+      <button class="subdrop" (click)="showGuns()">Guns &#9660;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="submenu-content">
+        <a [routerLink]="[{ outlets: { primary: ['inventory'],sidebar: ['inventory'] } }]">
+          Collectibles
+        </a>
+        <!-- <a routerLink="inventory">Collectibles</a> -->
+        <a href="/">Engraved</a>
+        <a href="/">Home Protection</a>
+        <a href="/">Hunting</a>
+        <a href="/">Military</a>
+        <a href="/">Other</a>
+      </div>
+    </div>
+
+    <div class="submenu">
+      <button class="subdrop">Non-Guns &#9660;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="submenu-content">
+        <a href="/">Ammo</a>
+        <a href="/">Books</a>
+        <a href="/">Cases & Racks</a>
+        <a href="/">Gun Accessories</a>
+        <a href="/">Jewelry</a>
+        <a href="/">Knives</a>
+      </div>
+    </div>
+
+    <div class="submenu">
+      <button class="subdrop">Services &#9660;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="submenu-content">
+        <a href="/">Engravings</a>
+        <a href="/">Exports</a>
+        <a href="/">Imports</a>
+      </div>
+    </div>
+
+    <a routerLink="about">About Us</a>
+  </div>
+
+</div>

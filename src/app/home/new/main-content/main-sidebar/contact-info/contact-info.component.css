@@ -1,0 +1,14 @@
+h2 {
+  margin-top: 5px;
+  text-align: center;
+}
+img {
+  width: 25px;
+  /* max-height: 25px; */
+}
+p {
+  vertical-align: top;
+  margin: 10px;
+  display: inline-block;
+  width: 85%;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Seeking a rare gem?</h1>
+
+  <slideshow [imageUrls]="imageUrls" [height]="height" [autoPlay]="true" [autoPlayInterval]="3000" stopAutoPlayOnSlide="true"
+    [showArrows]="true" [showCaptions]="true" [showDots]="true" [backgroundSize]="backgroundSize" [backgroundPosition]="backgroundPosition"
+    [dotColor]="dotColor" [captionColor]="captionColor" [captionBackground]="captionBackground">
+  </slideshow>
+
+  <p>
+    Hunting for a showstopper to add to your collection? Hoping to add a historical piece? In search of finely engraved
+    firearms?
+    <span>Look no further than {{ company.name }}! We know guns. We treasure guns. And like you, we are collectors.</span>
+    As the world's leading commemorative gun dealer, chances are we have just what you're after.
+  </p>
+
+  <p>
+    Old and new, {{ company.name }}’ has the gun for you. We carry modern-day firearms, but unlike most gun shops, we
+    specialize
+    in the antique ones. We are always on the hunt for fine firearms and accept single pieces, complete collections,
+    estates
+    and consignment sales. If you know of any firearms in need of a good home, give us a call at {{ company.name }}.
+  </p>
+
+  <p>
+    We are open {{ company.open }}. Every once in a while, we are out in search of new pieces to add to our collection,
+    and yours.
+    Feel free to give us a ring in advance so we don't miss your visit!
+  </p>
+
+  <p *ngIf='specialAnnouncement' class='special'>
+    {{ specialAnnouncement }}
+  </p>
+</div>

@@ -1,0 +1,23 @@
+button {
+  display: block;
+  margin: 10px auto;
+  width: 90%;
+  height: 85px;
+  border: 1.5px solid #28303e;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pistols {
+  background-image: url('/assets/images/pistols.png');
+  margin-top: 0;
+}
+.revolvers {
+  background-image: url('/assets/images/revolvers.png');
+}
+.rifles {
+  background-image: url('/assets/images/rifles.png');
+}
+.ammo {
+  background-image: url('/assets/images/ammo.png');
+}

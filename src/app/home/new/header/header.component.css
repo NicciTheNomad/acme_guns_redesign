@@ -1,0 +1,70 @@
+.navbar {
+  overflow: hidden;
+}
+img {
+  margin: 5px 10px;
+  width: 200px;
+  float: left;
+}
+.navbar-links {
+  margin-top: 3%;
+}
+.navbar a {
+  float: left;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #28303e;
+  text-align: center;
+}
+.navbar .logo {
+  margin-top: 0;
+  padding: 0;
+}
+.submenu {
+  float: left;
+  overflow: hidden;
+}
+.submenu .subdrop {
+  font-size: 1.2em;
+  color: #28303e;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.navbar a:hover,
+.submenu:hover .subdrop {
+  background-color: #28303e;
+  color: #f9f9f9;
+}
+.submenu-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.submenu-content a {
+  float: none;
+  color: #28303e;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.submenu-content a:hover {
+  background-color: #e0e4eb;
+  color: #28303e;
+}
+
+/* Show the dropdown menu on hover */
+.submenu:hover .submenu-content {
+  display: block;
+}

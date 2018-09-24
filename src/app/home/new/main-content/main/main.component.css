@@ -1,0 +1,22 @@
+/* @media only screen and (max-width: 600px) {
+  .slideshow-container {
+    display: none;
+  }
+} */
+.container {
+  padding: 0 25px;
+}
+h1 {
+  color: #28303e;
+  text-align: center;
+  margin-bottom: 10px;
+}
+p {
+  margin: 10px 0;
+  text-align: justify;
+}
+.special,
+span {
+  color: #28303e;
+  font-weight: bold;
+}

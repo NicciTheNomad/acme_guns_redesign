@@ -1,0 +1,13 @@
+.sidebar div {
+  margin: 10px 5px;
+  padding: 5px;
+  /* border: 1px dotted #252525; */
+}
+.sidebar div:nth-of-type(2) {
+  border-top: 1px solid #252525;
+}
+.map {
+  height: 250px;
+  background-image: url('/assets/images/map.png');
+  margin-top: -10px;
+}

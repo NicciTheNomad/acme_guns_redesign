@@ -1,0 +1,28 @@
+.container-fluid.footer {
+  margin-top: 10px;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+.disclaimer {
+  display: inline-block;
+  width: 70%;
+  font-style: italic;
+  text-align: center;
+  /* border: 1px solid #252525; */
+}
+.polly {
+  width: 25%;
+  float: right;
+  vertical-align: middle;
+  /* border: 1px solid #252525; */
+}
+footer {
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+}
+img.footer-logo {
+  width: 10%;
+  margin-right: 5px;
+}
