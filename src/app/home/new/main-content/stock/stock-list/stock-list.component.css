@@ -1,0 +1,31 @@
+.info-card {
+  display: inline-block;
+  margin: 10px;
+  width: 23%;
+  vertical-align: top;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.info-card img {
+  width: 100%;
+  min-height: 25%;
+  max-height: 50%;
+  border-radius: 5px 5px 0 0;
+}
+.info-card-details {
+  vertical-align: bottom;
+  padding: 10px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .info-card {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 758px) {
+  .info-card {
+    width: 90%;
+  }
+}

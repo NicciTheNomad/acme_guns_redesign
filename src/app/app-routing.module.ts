@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { GunResolver } from '@app/services/guns.resolver.service';
+
 import { HomeComponent } from './home/home.component';
 
 import { OldComponent } from './home/old/old.component';
@@ -18,6 +20,7 @@ import { AboutComponent } from './home/new/main-content/about/about.component';
 import { StockComponent } from './home/new/main-content/stock/stock.component';
 import { StockSidebarComponent } from './home/new/main-content/stock-sidebar/stock-sidebar.component';
 import { StockListComponent } from '@app/home/new/main-content/stock/stock-list/stock-list.component';
+import { StockDetailsComponent } from '@app/home/new/main-content/stock/stock-details/stock-details.component';
 
 const routes: Routes = [
   {
@@ -68,31 +71,38 @@ const routes: Routes = [
       {
         path: '',
         component: MainComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        resolve: {
+          guns: GunResolver
+        }
       },
-      {
-        path: '',
-        component: SidebarComponent,
-        outlet: 'sidebar'
-      },
+      // {
+      //   path: '',
+      //   component: SidebarComponent,
+      //   outlet: 'sidebar'
+      // },
       {
         path: 'about',
         component: AboutComponent,
         pathMatch: 'full'
       },
-      {
-        path: 'inventory',
-        component: StockSidebarComponent,
-        outlet: 'sidebar'
-      },
+      // {
+      //   path: 'inventory',
+      //   component: StockSidebarComponent,
+      //   outlet: 'sidebar'
+      // },
       {
         path: 'inventory',
         component: StockComponent,
-        pathMatch: 'full',
         children: [
           {
             path: '',
             component: StockListComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: ':id',
+            component: StockDetailsComponent,
             pathMatch: 'full'
           }
         ]

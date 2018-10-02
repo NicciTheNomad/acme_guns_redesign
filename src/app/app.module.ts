@@ -36,6 +36,8 @@ import { StockListComponent } from './home/new/main-content/stock/stock-list/sto
 import { StockDetailsComponent } from './home/new/main-content/stock/stock-details/stock-details.component';
 import { StockBreadcrumbsComponent } from './home/new/main-content/stock/stock-breadcrumbs/stock-breadcrumbs.component';
 import { SearchComponent } from './home/new/main-content/stock/search/search.component';
+import { CarouselComponent } from './home/new/main-content/main/carousel/carousel.component';
+import { CarouselItemComponent } from './home/new/main-content/main/carousel-item/carousel-item.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { SearchComponent } from './home/new/main-content/stock/search/search.com
     OldInventoryComponent,
     OldHandgunsComponent,
     OldLonggunsComponent,
-    ToggleComponent
+    ToggleComponent,
+    CarouselComponent,
+    CarouselItemComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SlideshowModule, HttpClientModule],
   providers: [],

@@ -14,9 +14,9 @@ export class StockComponent implements OnInit {
   constructor(private gundata: GunsService) {}
 
   ngOnInit() {
-    this.gundata.getGuns().subscribe(guns => {
-      this.guns = guns;
-      console.log(this.guns);
-    });
+    // this.gundata.getGuns().subscribe(guns => {
+    //   this.guns = guns;
+    //   console.log(this.guns);
+    // });
   }
 }

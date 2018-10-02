@@ -4,6 +4,10 @@ const validator = require('validator');
 
 const gunSchema = new Schema(
   {
+    stock_no: {
+      type: String,
+      trim: true
+    },
     manufacturer: {
       type: String,
       trim: true,
@@ -14,14 +18,22 @@ const gunSchema = new Schema(
       trim: true,
       required: [true, 'Please complete this field...']
     },
-    barrelLength: number,
+    caliber: {
+      type: String,
+      trim: true
+    },
+    action: {
+      type: String,
+      trim: true
+    },
+    barrelLength: String,
     desc: {
       type: String,
       trim: true,
       required: [true, 'Please complete this field...']
     },
     price: {
-      type: number,
+      type: Number,
       trim: true,
       validator(value) {
         return value >= 0;
@@ -38,24 +50,24 @@ const gunSchema = new Schema(
       type: [String],
       required: [true, 'Please select the class(es).'],
       enum: [
-        'collectibles',
-        'commemoratives',
+        'collectible',
+        'commemorative',
         'engraved',
         'hand guns',
-        'home protection',
+        'home defense',
         'hunting',
         'long guns',
         'military',
         'other'
       ],
-      default: 'collectibles'
+      default: 'collectible'
     },
-    sold: {
-      type: Boolean,
-      default: false
-    },
+    // sold: {
+    //   type: Boolean,
+    //   default: false
+    // },
     imageURL: {
-      type: String,
+      type: [String],
       required: true,
       default: '/assets/images/no-image.jpg'
     }

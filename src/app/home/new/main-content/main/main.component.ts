@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { company } from '@app/data/company-data';
-import { IImage } from 'ng-simple-slideshow';
 import { GunsService } from '@app/services/guns.service';
 import { Gun } from '@app/models/guns';
 
@@ -14,69 +14,42 @@ export class MainComponent implements OnInit {
   company = company;
   specialAnnouncement =
     'We are currently closed due to Hurricane Florence. We hope to reopen soon!';
-
-  imageUrls: (string | IImage)[] = [
-    {
-      url: '/assets/images/riflecomm.jpg',
-      href: 'https://5b905f7b3ef10a001445d02e.mockapi.io/guns/${gun.id}',
-      caption: 'Gun Manufacturer - Model',
-      backgroundPosition: 'center',
-      backgroundSize: 'contain'
-    }
-  ];
-  height = '250px';
-  showArrows = true;
-  arrowSize = '30px';
-  disableSwiping = false;
-  autoPlay = true;
-  autoPlayInterval = 4000;
-  stopAutoPlayOnSlide = true;
-  debug = false;
-  backgroundSize = 'cover';
-  backgroundPosition = 'center';
-  backgroundRepeat = 'no-repeat';
-  showCaptions = true;
-  captionColor = '#28303e';
-  captionBackground = 'transparent';
-  lazyLoad = false;
-  width = '100%';
-
-  constructor(private gundata: GunsService) {}
+  guns: Gun[];
+  slideIndex = 0;
+  constructor(private gundata: GunsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.gundata.getGuns().subscribe(guns => {
-      this.imageUrls = this.randomGuns(guns).map(gun => {
-        return {
-          url: gun.imageURL[0],
-          caption: `${gun.manufacturer} - ${gun.model}`,
-          href: `https://5b905f7b3ef10a001445d02e.mockapi.io/guns/${gun.id}`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center'
-        };
-      });
-    });
+    this.guns = this.route.snapshot.data.guns as Gun[];
+    this.guns = this.randomGuns(this.guns);
   }
 
   // helper function for randomization of gun slides
   randomGuns(guns: Gun[]) {
-    // temporary function to remove fake data
-    const tempGuns = [];
+    // only select guns with images
+    const gunImages = [];
     for (let i = 0; i < guns.length; i++) {
-      if (guns[i].imageURL[0].indexOf('/assets') > -1) {
-        tempGuns.push(guns[i]);
+      if (guns[i].imageURL[0] && guns[i].imageURL[0].indexOf('assets') > 0) {
+        console.log('found a gun with an image', guns[i].imageURL[0]);
+        gunImages.push(guns[i]);
       }
     }
     // confirm db result >= 6
+
+    // select random images to display
     const gunSlides: Gun[] = [];
     let idx = 0;
     while (gunSlides.length < 6) {
       const temp =
-        tempGuns[Math.floor(Math.random() * tempGuns.length - 1) + 1];
+        gunImages[Math.floor(Math.random() * gunImages.length - 1) + 1];
       if (!gunSlides.includes(temp)) {
         gunSlides.push(temp);
         idx++;
       }
     }
     return gunSlides;
+  }
+
+  viewGun(gunID) {
+    console.log(`I want to view gun ${gunID}`);
   }
 }

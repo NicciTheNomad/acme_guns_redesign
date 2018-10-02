@@ -1,3 +1,13 @@
-<p>
-  stock-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let gun of guns" class="col-3 info-card" (click)="getDetails(gun.id)">
+      <img *ngIf="!gun.imageURL[0] || gun.imageURL[0] === 'null'" src="/assets/images/no-image.jpg" alt="no-image">
+      <img *ngIf="gun.imageURL[0]" src="{{gun.imageURL[0]}}" alt="Gun Model">
+      <div class="info-card-details">
+        <h2>{{ gun.manufacturer }}</h2>
+        <h3>{{ gun.model }}</h3>
+        <h3>{{ gun.caliber }} Caliber</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,21 @@
 <div class="container">
   <h1>Seeking a rare gem?</h1>
 
-  <slideshow [imageUrls]="imageUrls" [height]="height" [autoPlay]="true" [autoPlayInterval]="3000" stopAutoPlayOnSlide="true"
-    [showArrows]="true" [showCaptions]="true" [showDots]="true" [backgroundSize]="backgroundSize" [backgroundPosition]="backgroundPosition"
-    [dotColor]="dotColor" [captionColor]="captionColor" [captionBackground]="captionBackground">
-  </slideshow>
+  <div class="carousel">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <div class="slide-container">
+      <app-carousel [delay]="2000">
+        <app-carousel-item *ngFor="let g of guns" [gun]='g'>
+          <div class="slides" (click)="viewGun(g.id)">
+            <img src="{{g.imageURL[0]}}" alt="{{g.model}}">
+            <p class=" caption">{{g.manufacturer}} -
+              {{g.model}}</p>
+          </div>
+        </app-carousel-item>
+      </app-carousel>
+    </div>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
 
   <p>
     Hunting for a showstopper to add to your collection? Hoping to add a historical piece? In search of finely engraved

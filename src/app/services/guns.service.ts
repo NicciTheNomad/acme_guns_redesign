@@ -8,7 +8,9 @@ import { Gun } from '@app/models';
   providedIn: 'root'
 })
 export class GunsService {
-  baseURL = 'https://5b905f7b3ef10a001445d02e.mockapi.io/guns';
+  // baseURL = 'https://5b905f7b3ef10a001445d02e.mockapi.io/guns';
+
+  baseURL = '/api/guns/';
 
   constructor(private http: HttpClient) {}
 

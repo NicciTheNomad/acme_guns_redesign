@@ -4,7 +4,10 @@ const fs = require('fs');
 const regEx = new RegExp('\\.js$', 'i'); //regex to capture only .js files
 
 //connect mongodb
-mongoose.connect('mongodb://localhost/gun_shop');
+mongoose.connect(
+  'mongodb://localhost:27017/gun_shop',
+  { useNewUrlParser: true }
+);
 mongoose.connection.on('connected', () => console.log('MongoDB connected'));
 
 //read all files in models folder and require each .js file

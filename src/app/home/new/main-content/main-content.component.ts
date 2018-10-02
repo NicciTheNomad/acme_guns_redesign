@@ -9,8 +9,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  sidebarLeft = false; // main sidebar, float right
-  contentRight = false; // content, float left
+  showStockSidebar = false;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,20 +21,12 @@ export class MainContentComponent implements OnInit {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(res => {
-        if (this.location.path() === '/inventory') {
+        if (this.location.path() === '/new/inventory') {
           console.log('navigated to guns page');
-          this.sidebarLeft = true;
-          this.contentRight = true;
+          this.showStockSidebar = true;
         } else {
-          this.sidebarLeft = false;
-          this.contentRight = false;
+          this.showStockSidebar = false;
         }
-        console.log(
-          'sidebar left',
-          this.sidebarLeft,
-          'content right',
-          this.contentRight
-        );
       });
   }
 }

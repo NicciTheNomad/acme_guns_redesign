@@ -1,6 +1,13 @@
-<div class="content" [class.content-right]="contentRight">
+<!-- <div class="content" [class.content-right]="contentRight">
     <router-outlet></router-outlet>
 </div>
 <div class="sidebar" [class.sidebar-left]="sidebarLeft">
     <router-outlet name="sidebar"></router-outlet>
+</div> -->
+<router-outlet></router-outlet>
+<div class="main-sidebar" [ngClass]="{'sidebar': !showStockSidebar}">
+    <app-sidebar *ngIf="!showStockSidebar"></app-sidebar>
+</div>
+<div class="stock-sidebar" [ngClass]="{'sidebar': showStockSidebar}">
+    <app-stock-sidebar *ngIf="showStockSidebar"></app-stock-sidebar>
 </div>
